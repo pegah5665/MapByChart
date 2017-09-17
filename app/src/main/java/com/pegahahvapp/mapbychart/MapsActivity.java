@@ -53,7 +53,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         lineareChart=findViewById(R.id.LineareChart);
 
         chart = (PieChartView) findViewById(R.id.chart);
-        //ghabee click kardane chart
+        //ghabele click kardane chart
         chart.setOnValueTouchListener(new ValueTouchListener());
         //dadane data be chart:
         toggleLabelForSelected();
@@ -74,10 +74,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
         LatLng kanda = new LatLng(35.719593, 51.386943);
         mMap.addMarker(new MarkerOptions().position(kanda).title("Marker in Kanda"));
-
 
         CameraPosition position = CameraPosition.builder()
                 .target(kanda)
@@ -105,9 +103,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     private void generateData() {
-        //te@dad bakhsh haye chart
+
         int numValues = 6;
-//sakhtane yek list ba aghadire tasadofi
+//sakhtane yek list ba maghadire tasadofi
         List<SliceValue> values = new ArrayList<SliceValue>();
         for (int i = 0; i < numValues; ++i) {
             SliceValue sliceValue = new SliceValue((float) Math.random() * 30 + 15, ChartUtils.pickColor());
